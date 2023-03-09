@@ -32,7 +32,7 @@ const List = (props: any) => {
             {files.map((file: any) => (
               <tr key={file.id}>
                 <td>{file.fileName}</td>
-                <td>{file.created_at}</td>
+                <td>{file.createdAt}</td>
                 <td>{file.status}</td>
               </tr>
             ))}
@@ -50,7 +50,7 @@ const queryAllFiles = gql`
     files {
       id
       fileName
-      created_at
+      createdAt
       status
     }
   }
