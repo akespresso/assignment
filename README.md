@@ -23,6 +23,7 @@ Set up in Hasura
 
 _Files_
 | Column | Type |
+| --- | ------ |
 | id | uuid |
 | fileName | text |
 | url | text |
