@@ -1,21 +1,16 @@
 {
-  "name": "nextjs-starter",
-  "description": "A Next.js starter that includes all you need to build amazing projects",
+  "name": "quantum-assignment",
+  "description": "A simplified version of Quantum for evaluation purposes",
   "version": "1.0.0",
   "private": true,
-  "author": "abel chang<cwuyiqing@gmail.com>",
-  "license": "MIT",
-  "keywords": [
-    "nextjs",
-    "starter",
-    "typescript"
-  ],
+  "author": "Quantum Online Technologies LLC",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "lint": "eslint --ignore-path .gitignore --fix",
+    "lint": "eslint --ignore-path .gitignore .eslintrc.js --fix",
     "format": "prettier --ignore-path .gitignore \"pages/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install"
   },
@@ -25,7 +20,20 @@
       "pnpm run format"
     ]
   },
+  "eslintIgnore": [".eslintrc.js"],
   "dependencies": {
+    "@apollo/client": "3.7.10",
+    "@emotion/server": "11.10.0",
+    "@google-cloud/storage": "6.9.4",
+    "@mantine/core": "6.0.1",
+    "@mantine/dates": "6.0.1",
+    "@mantine/dropzone": "6.0.1",
+    "@mantine/form": "6.0.1",
+    "@mantine/hooks": "6.0.1",
+    "@mantine/next": "6.0.1",
+    "dayjs": "1.11.7",
+    "graphql": "16.6.0",
+    "isomorphic-fetch": "3.0.0",
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -33,6 +41,7 @@
   "devDependencies": {
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
+    "@types/isomorphic-fetch": "0.0.36",
     "@types/node": "18.14.6",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -44,6 +53,7 @@
     "eslint-config-next": "13.2.3",
     "husky": "8.0.3",
     "lint-staged": "13.1.2",
+    "next-secure-headers": "2.2.0",
     "postcss": "8.4.21",
     "prettier": "2.8.4",
     "tailwindcss": "3.2.7",

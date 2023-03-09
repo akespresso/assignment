@@ -1,76 +1,63 @@
-import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
+import { Button } from "@mantine/core"
+import Head from "next/head"
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Quantum Assignment</title>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main className="mx-auto mt-8 lg:px-6 max-w-7xl px-14">
+        <div className="w-2/3 p-8 mx-auto my-auto bg-white border rounded bg-shadow">
+          <h1 className="font-semibold text-center">Upload the file(s)</h1>
 
-        <p className={styles.description}>
-          Get started by editing{` `}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+          <form>
+            <div className="px-4 py-2 mt-8 border rounded bg-gray-50">
+              <p>
+                Form input that captures email for routing of the file for parsing by appropriate
+                template.
+              </p>
+              <ul className="list-disc list-inside">
+                <li>
+                  Use the{" "}
+                  <a
+                    href="https://mantine.dev/form/use-form/"
+                    className="underline hover:no-underline"
+                  >
+                    Mantine Form hook
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-        <p className={styles.description}>This is not an official starter!</p>
+            <div className="px-4 py-8 mt-8 border rounded bg-gray-50">
+              <p>Drop zone for file uploads.</p>
+              <ul className="list-disc list-inside">
+                <li>
+                  Use the{" "}
+                  <a
+                    href="https://mantine.dev/others/dropzone/"
+                    className="underline hover:no-underline"
+                  >
+                    Mantine Dropzone component
+                  </a>
+                </li>
+                <li>
+                  If the submission was successful, display a green box with success message, else
+                  show a red box with an error message.
+                </li>
+              </ul>
+            </div>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=typescript-nextjs-starter"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-          <a
-            href="https://vercel.com/docs/concepts/functions/serverless-functions"
-            className={styles.card}
-          >
-            <h3>Serverless Function &rarr;</h3>
-            <p>Running code on-demand without needing to manage your own infrastructure.</p>
-          </a>
-          <a
-            href="https://vercel.com/docs/concepts/functions/edge-functions"
-            className={styles.card}
-          >
-            <h3>Edge Function &rarr;</h3>
-            <p>Deliver dynamic, personalized content with the lightweight Edge Runtime.</p>
-          </a>
+            <Button type="submit" className="mt-4">
+              Submit
+            </Button>
+          </form>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=typescript-nextjs-starter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{` `}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
 }
+
+export default Home
