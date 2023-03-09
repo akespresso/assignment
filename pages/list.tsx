@@ -16,7 +16,7 @@ const List = (props: any) => {
   return (
     <div>
       <Head>
-        <title>Quantum Assignment</title>
+        <title>List | Quantum Assignment</title>
       </Head>
 
       <main className="mx-auto mt-8 lg:px-6 max-w-7xl px-14">
