@@ -1,5 +1,6 @@
-import { Button } from "@mantine/core"
+import { Badge, Button } from "@mantine/core"
 import Head from "next/head"
+import Link from "next/link"
 
 const Home = () => {
   return (
@@ -9,6 +10,14 @@ const Home = () => {
       </Head>
 
       <main className="mx-auto mt-8 lg:px-6 max-w-7xl px-14">
+        <nav className="flex items-center justify-center mb-8 font-semibold text-gray-700 divide-x">
+          <Link href="/list" className="px-4">
+            All Files
+          </Link>
+          <Link href="/alerts" className="flex items-center px-4 hover:text-gray-900">
+            <span>All Alerts</span> <Badge>To Implement</Badge>
+          </Link>
+        </nav>
         <div className="w-2/3 p-8 mx-auto my-auto bg-white border rounded bg-shadow">
           <h1 className="font-semibold text-center">Upload the file(s)</h1>
 

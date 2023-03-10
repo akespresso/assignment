@@ -14,7 +14,7 @@ import { NextApiRequest, NextApiResponse } from "next"
  *   instance is already created in lib/storage.ts. Create your own instance of Google
  *   Cloud storage for testing and use a bucket called "rawdata".
  * - Save the file metadata (filename, url, email of the user, time & date)
- *   to the files table in the database with a status "uploaded"
+ *   to the "files" table in the database with a status "uploaded"
  *     - The email value is accessible from the req object
  * - Process the file using a specific parsing template (you'll need to write it)
  * - Note that the files can come in CSV of XLSX format and they use formatting such as:
@@ -30,6 +30,15 @@ import { NextApiRequest, NextApiResponse } from "next"
  *
  * - dayjs is already installed and can help with parsing dates
  *
+ * Errors in source files
+ * - In some cases the rows in the file might contain errors. For example,
+ *   a date might be date, input, and storeId might be missing even though
+ *   they are required by the database. In other cases, the price might be
+ *   incorrect by being many orders of magnitude higher than others.
+ * - In these cases, each row should be saved to the database
+ *   with a status of "error", and the error should be saved in
+ *   the "alerts" table.
+ *
  * - Once the file is parsed
  *    - Prepare a json object that will save the data to the Hasura database
  *    - Update the entry in the files table to set the status to "processed"
@@ -39,7 +48,8 @@ import { NextApiRequest, NextApiResponse } from "next"
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Please implement the above functionality
 
-  // Save information about the file in the database in the database
+  // Save information about the file in the database
+  // Please make sure the objects array has all required fields
   const { data } = await client.mutate({
     mutation: insertFilesMutation,
     variables: {
@@ -53,6 +63,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       ],
     },
   })
+
+  // Parse the file and save the data to the database
 
   return res.json({ success: true })
 }
