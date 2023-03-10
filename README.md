@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://res.cloudinary.com/drhrbob2m/image/upload/v1675303246/favicons/apple-120x120-touch-icon_a8pjpk.png" />
+</p>
+
 # Quantum Assessment
 
 1. [Overview](#overview)
