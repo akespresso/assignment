@@ -59,7 +59,7 @@ const Home = () => {
               </ul>
             </div>
 
-            <Button type="submit" className="mt-4">
+            <Button type="submit" className="mt-4 !bg-blue-700 hover:!bg-blue-900">
               Submit
             </Button>
           </form>
