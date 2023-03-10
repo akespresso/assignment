@@ -143,7 +143,7 @@ The following tables have been set up in Hasura already. Note that in the sample
 
 ## Sample files
 
-The folder `demoData/` includes 3 sample files for your testing:
+The folder `demoData/` includes 3 sample files for your tests:
 
 - `demoData1.xslx` should be used with email sample@ask.com and be parsed into the `questionnaires` table. The
 - `demoData2.xslx` should be used with email sample@question.com and also be parsed into `questionnaires` table
